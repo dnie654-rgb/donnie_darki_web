@@ -1,0 +1,15 @@
+D:\pyrevit\Extensions\Gimhan\Riyan-\Riyan-EXTENSION\LocalChatbot\bin\Release\net8.0\LocalChatbot.exe
+D:\pyrevit\Extensions\Gimhan\Riyan-\Riyan-EXTENSION\LocalChatbot\bin\Release\net8.0\LocalChatbot.deps.json
+D:\pyrevit\Extensions\Gimhan\Riyan-\Riyan-EXTENSION\LocalChatbot\bin\Release\net8.0\LocalChatbot.runtimeconfig.json
+D:\pyrevit\Extensions\Gimhan\Riyan-\Riyan-EXTENSION\LocalChatbot\bin\Release\net8.0\LocalChatbot.dll
+D:\pyrevit\Extensions\Gimhan\Riyan-\Riyan-EXTENSION\LocalChatbot\bin\Release\net8.0\LocalChatbot.pdb
+D:\pyrevit\Extensions\Gimhan\Riyan-\Riyan-EXTENSION\LocalChatbot\obj\Release\net8.0\LocalChatbot.GeneratedMSBuildEditorConfig.editorconfig
+D:\pyrevit\Extensions\Gimhan\Riyan-\Riyan-EXTENSION\LocalChatbot\obj\Release\net8.0\LocalChatbot.AssemblyInfoInputs.cache
+D:\pyrevit\Extensions\Gimhan\Riyan-\Riyan-EXTENSION\LocalChatbot\obj\Release\net8.0\LocalChatbot.AssemblyInfo.cs
+D:\pyrevit\Extensions\Gimhan\Riyan-\Riyan-EXTENSION\LocalChatbot\obj\Release\net8.0\LocalChatbot.csproj.CoreCompileInputs.cache
+D:\pyrevit\Extensions\Gimhan\Riyan-\Riyan-EXTENSION\LocalChatbot\obj\Release\net8.0\LocalChatbot.sourcelink.json
+D:\pyrevit\Extensions\Gimhan\Riyan-\Riyan-EXTENSION\LocalChatbot\obj\Release\net8.0\LocalChatbot.dll
+D:\pyrevit\Extensions\Gimhan\Riyan-\Riyan-EXTENSION\LocalChatbot\obj\Release\net8.0\refint\LocalChatbot.dll
+D:\pyrevit\Extensions\Gimhan\Riyan-\Riyan-EXTENSION\LocalChatbot\obj\Release\net8.0\LocalChatbot.pdb
+D:\pyrevit\Extensions\Gimhan\Riyan-\Riyan-EXTENSION\LocalChatbot\obj\Release\net8.0\LocalChatbot.genruntimeconfig.cache
+D:\pyrevit\Extensions\Gimhan\Riyan-\Riyan-EXTENSION\LocalChatbot\obj\Release\net8.0\ref\LocalChatbot.dll

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Agents | EstatePro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .agents-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .agent-card {
+            text-align: center;
+        }
+
+        .agent-img {
+            height: 350px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .agent-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .agent-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .agent-card span {
+            color: var(--accent);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.1rem;
+        }
+
+        .agent-social {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Estate<span>Pro</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="listings.html">Listings</a></li>
+                <li><a href="agents.html" class="active">Agents</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container section-padding">
+        <div class="section-header text-center" style="margin-bottom: 6rem;">
+            <span class="subtitle">Expertise You Can Trust</span>
+            <h2 style="font-size: 3rem;">Meet Our Elite <i>Agents</i></h2>
+            <p style="max-width: 700px; margin: 1.5rem auto; color: var(--text-muted);">Our agents are market leaders
+                with decades of combined experience in high-end global real estate.</p>
+        </div>
+
+        <div class="agents-grid">
+            <div class="agent-card reveal">
+                <div class="agent-img"><img
+                        src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1288&auto=format&fit=crop"
+                        alt="Agent"></div>
+                <h3>Alexandra Vance</h3>
+                <span>Luxury Specialist</span>
+                <div class="agent-social">
+                    <i data-lucide="phone"></i>
+                    <i data-lucide="mail"></i>
+                    <i data-lucide="linkedin"></i>
+                </div>
+            </div>
+            <div class="agent-card reveal delay-1">
+                <div class="agent-img"><img
+                        src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1287&auto=format&fit=crop"
+                        alt="Agent"></div>
+                <h3>Marcus Sterling</h3>
+                <span>Modern Mansions</span>
+                <div class="agent-social">
+                    <i data-lucide="phone"></i>
+                    <i data-lucide="mail"></i>
+                    <i data-lucide="linkedin"></i>
+                </div>
+            </div>
+            <div class="agent-card reveal delay-2">
+                <div class="agent-img"><img
+                        src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1361&auto=format&fit=crop"
+                        alt="Agent"></div>
+                <h3>Isabella Rossi</h3>
+                <span>Coastal Luxury</span>
+                <div class="agent-social">
+                    <i data-lucide="phone"></i>
+                    <i data-lucide="mail"></i>
+                    <i data-lucide="linkedin"></i>
+                </div>
+            </div>
+            <div class="agent-card reveal delay-3">
+                <div class="agent-img"><img
+                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=1470&auto=format&fit=crop"
+                        alt="Agent"></div>
+                <h3>Julian Thorne</h3>
+                <span>Investment Advisory</span>
+                <div class="agent-social">
+                    <i data-lucide="phone"></i>
+                    <i data-lucide="mail"></i>
+                    <i data-lucide="linkedin"></i>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

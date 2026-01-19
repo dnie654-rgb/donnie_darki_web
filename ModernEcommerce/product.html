@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | AURUM</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .product-page {
+            padding-top: 12rem;
+            display: flex;
+            gap: 6rem;
+            margin-bottom: 8rem;
+        }
+
+        .product-gallery {
+            flex: 1.2;
+        }
+
+        .product-gallery-img {
+            aspect-ratio: 4/5;
+            background: #f9f9f9;
+            overflow: hidden;
+        }
+
+        .product-gallery-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-details {
+            flex: 1;
+        }
+
+        .product-details h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-price-large {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 3rem;
+        }
+
+        .product-desc {
+            color: #555;
+            margin-bottom: 4rem;
+            max-width: 500px;
+        }
+
+        .buying-options {
+            border-top: 1px solid #eee;
+            padding-top: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <div class="header-left">
+                <a href="index.html" class="logo">AURUM</a>
+            </div>
+            <div class="header-right">
+                <div class="header-icons">
+                    <a href="cart.html" class="cart-icon">
+                        <i data-lucide="shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container product-page" id="product-detail">
+        <!-- Content injected by JS -->
+    </main>
+
+    <script src="main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const id = parseInt(params.get('id')) || 1;
+            const product = PRODUCTS.find(p => p.id === id);
+
+            if (product) {
+                document.getElementById('product-detail').innerHTML = `
+                    <div class="product-gallery reveal">
+                        <div class="product-gallery-img"><img src="${product.image}"></div>
+                    </div>
+                    <div class="product-details reveal delay-1">
+                        <div class="product-category">${product.category}</div>
+                        <h1>${product.name}</h1>
+                        <div class="product-price-large">$${product.price.toFixed(2)}</div>
+                        <p class="product-desc">Masterfully crafted for those who appreciate the finer details. This ${product.name} embodies our commitment to quality materials and timeless design aesthetics. Perfect for any modern setting.</p>
+                        
+                        <div class="buying-options">
+                            <button class="btn btn-primary w-full" onclick="addToCart(${product.id})">Add to Bag</button>
+                        </div>
+                    </div>
+                `;
+                setupAnimations();
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard | EduStream</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body style="background: var(--bg-alt);">
+    <header>
+        <div class="container nav-wrapper">
+            <nav>
+                <a href="index.html" class="logo">
+                    <i data-lucide="graduation-cap"></i>
+                    Edu<span>Stream</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="catalog.html">Courses</a></li>
+                    <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                </ul>
+                <div class="auth-btns"></div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="dashboard-header">
+            <div>
+                <h1>Welcome back, Riyan! 👋</h1>
+                <p style="color: var(--text-muted); margin-top: 0.5rem;">You've completed 4 lessons this week. Keep up
+                    the momentum!</p>
+            </div>
+        </section>
+
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon" style="background: #EEF2FF; color: var(--primary);">
+                    <i data-lucide="book-open"></i>
+                </div>
+                <div>
+                    <h3 id="courses-count">4</h3>
+                    <p style="font-size: 0.8rem; color: var(--text-muted);">Enrolled Courses</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="background: #ECFDF5; color: var(--success);">
+                    <i data-lucide="check-circle"></i>
+                </div>
+                <div>
+                    <h3>12</h3>
+                    <p style="font-size: 0.8rem; color: var(--text-muted);">Completed Lessons</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="background: #FEF3C7; color: var(--warning);">
+                    <i data-lucide="trending-up"></i>
+                </div>
+                <div>
+                    <h3 id="overall-progress">32%</h3>
+                    <p style="font-size: 0.8rem; color: var(--text-muted);">Overall Progress</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon" style="background: #F0F9FF; color: var(--secondary);">
+                    <i data-lucide="award"></i>
+                </div>
+                <div>
+                    <h3>2</h3>
+                    <p style="font-size: 0.8rem; color: var(--text-muted);">Certificates Earned</p>
+                </div>
+            </div>
+        </section>
+
+        <section style="margin-bottom: 5rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <h2>Continue Learning</h2>
+                <a href="catalog.html" class="btn btn-secondary btn-sm">Explore More</a>
+            </div>
+            <div id="dashboard-courses" class="course-grid">
+                <!-- Injected via main.js -->
+            </div>
+        </section>
+    </main>
+
+    <script src="main.js"></script>
+    <script>
+        // Check if logged in, otherwise redirect
+        if (localStorage.getItem('edustream_auth') !== 'true') {
+            location.href = 'auth.html';
+        }
+    </script>
+</body>
+
+</html>

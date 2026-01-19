@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Gourmet Haven</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        header:not(.scrolled) {
+            background: #1a0505;
+            position: fixed;
+        }
+
+        .gal-hero {
+            padding: 12rem 0 6rem;
+            background: #1a0505;
+            color: white;
+            text-align: center;
+        }
+
+        .gal-hero h1 {
+            color: white;
+            font-size: 4rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Gourmet<span>Haven</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="reservation.html">Reservations</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="gal-hero">
+        <div class="container">
+            <span class="subtitle">A Visual Journey</span>
+            <h1>Atmosphere & Flavors</h1>
+        </div>
+    </section>
+
+    <main class="section-padding container">
+        <div class="gallery-grid">
+            <div class="gallery-item reveal"><img
+                    src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1470&auto=format&fit=crop"
+                    alt="Restaurant Interior"></div>
+            <div class="gallery-item reveal delay-1"><img
+                    src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?q=80&w=1287&auto=format&fit=crop"
+                    alt="Plated Food"></div>
+            <div class="gallery-item reveal delay-2"><img
+                    src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=1664&auto=format&fit=crop"
+                    alt="Dessert Close-up"></div>
+            <div class="gallery-item reveal"><img
+                    src="https://images.unsplash.com/photo-1559339352-11d035aa65de?q=80&w=1374&auto=format&fit=crop"
+                    alt="Wine Pouring"></div>
+            <div class="gallery-item reveal delay-1"><img
+                    src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1470&auto=format&fit=crop"
+                    alt="Chef at work"></div>
+            <div class="gallery-item reveal delay-2"><img
+                    src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1469&auto=format&fit=crop"
+                    alt="Main Course"></div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Gourmet Haven. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

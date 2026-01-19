@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduStream | Revolutionizing Online Learning</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <header>
+        <div class="container nav-wrapper">
+            <nav>
+                <a href="index.html" class="logo">
+                    <i data-lucide="graduation-cap"></i>
+                    Edu<span>Stream</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="catalog.html">Courses</a></li>
+                    <li><a href="#">Career Tracks</a></li>
+                    <li><a href="#">For Business</a></li>
+                </ul>
+                <div class="auth-btns">
+                    <!-- Injected via main.js -->
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <h1>Master New Skills with <i>Industry Experts</i></h1>
+                    <p>Advance your career with over 5,000+ courses in tech, design, business and more. Learn at your
+                        own pace, anytime, anywhere.</p>
+                    <div class="auth-btns-hero">
+                        <a href="catalog.html" class="btn btn-primary">Browse Courses</a>
+                        <a href="#" class="btn btn-secondary" style="margin-left: 1rem;">View Paths</a>
+                    </div>
+                    <div
+                        style="margin-top: 2rem; display: flex; align-items: center; gap: 1rem; color: var(--text-muted); font-size: 0.9rem;">
+                        <div style="display: flex;">
+                            <img src="https://i.pravatar.cc/32?img=1"
+                                style="border-radius: 50%; border: 2px solid white;">
+                            <img src="https://i.pravatar.cc/32?img=2"
+                                style="border-radius: 50%; border: 2px solid white; margin-left: -10px;">
+                            <img src="https://i.pravatar.cc/32?img=3"
+                                style="border-radius: 50%; border: 2px solid white; margin-left: -10px;">
+                        </div>
+                        Join 12,000+ active students
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1471&auto=format&fit=crop"
+                        alt="Students Learning">
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="section-padding container">
+            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem;">
+                <div>
+                    <h2 style="font-size: 2rem;">Top Collections</h2>
+                    <p style="color: var(--text-muted);">Explore courses by category</p>
+                </div>
+                <a href="catalog.html" style="color: var(--primary); font-weight: 600;">View All →</a>
+            </div>
+            <div class="category-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
+                <div class="category-item"
+                    style="background: #EEF2FF; padding: 2rem; border-radius: 1rem; text-align: center; cursor: pointer;">
+                    <i data-lucide="code" style="color: #6366F1; margin-bottom: 1rem;"></i>
+                    <h4>Development</h4>
+                </div>
+                <div class="category-item"
+                    style="background: #ECFDF5; padding: 2rem; border-radius: 1rem; text-align: center; cursor: pointer;">
+                    <i data-lucide="palette" style="color: #10B981; margin-bottom: 1rem;"></i>
+                    <h4>Design</h4>
+                </div>
+                <div class="category-item"
+                    style="background: #FFFBEB; padding: 2rem; border-radius: 1rem; text-align: center; cursor: pointer;">
+                    <i data-lucide="bar-chart-2" style="color: #F59E0B; margin-bottom: 1rem;"></i>
+                    <h4>Business</h4>
+                </div>
+                <div class="category-item"
+                    style="background: #F0F9FF; padding: 2rem; border-radius: 1rem; text-align: center; cursor: pointer;">
+                    <i data-lucide="camera" style="color: #0EA5E9; margin-bottom: 1rem;"></i>
+                    <h4>Photography</h4>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Courses -->
+        <section class="section-padding" style="background: var(--bg-alt);">
+            <div class="container">
+                <h2 style="font-size: 2.25rem; margin-bottom: 3rem; text-align: center;">Featured Courses</h2>
+                <div id="featured-courses" class="course-grid">
+                    <!-- Injected via main.js -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">EduStream</div>
+                <p class="footer-text">Empowering individuals worldwide through accessible, high-quality online
+                    education. Join our global community today.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Platform</h4>
+                <a href="#">Courses</a>
+                <a href="#">Instructors</a>
+                <a href="#">Scholarships</a>
+            </div>
+            <div class="footer-links">
+                <h4>Support</h4>
+                <a href="#">Help Center</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="footer-links">
+                <h4>Community</h4>
+                <a href="#">Discord Server</a>
+                <a href="#">Student Forum</a>
+                <a href="#">Events</a>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>&copy; 2026 EduStream Platform. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Catalog | EduStream</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .filter-bar {
+            margin: 3rem 0;
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            padding-bottom: 1rem;
+        }
+
+        .filter-btn {
+            padding: 0.6rem 1.2rem;
+            border: 1px solid var(--border);
+            border-radius: 2rem;
+            background: white;
+            font-weight: 500;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container nav-wrapper">
+            <nav>
+                <a href="index.html" class="logo">
+                    <i data-lucide="graduation-cap"></i>
+                    Edu<span>Stream</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="catalog.html" class="active">Courses</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                </ul>
+                <div class="auth-btns"></div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container section-padding">
+        <div style="text-align: center; max-width: 600px; margin: 0 auto 4rem;">
+            <h1>Explore Our Catalog</h1>
+            <p style="color: var(--text-muted); margin-top: 1rem;">Choose from thousands of high-quality courses taught
+                by industry leaders.</p>
+
+            <div style="margin-top: 2rem; position: relative;">
+                <input type="text" placeholder="What do you want to learn?"
+                    style="width:100%; padding: 1rem 1rem 1rem 3rem; border: 1px solid var(--border); border-radius: 0.75rem; font-family: inherit;">
+                <i data-lucide="search"
+                    style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); width: 18px; color: var(--text-muted);"></i>
+            </div>
+        </div>
+
+        <div class="filter-bar">
+            <button class="filter-btn active" data-category="all">All Courses</button>
+            <button class="filter-btn" data-category="development">Development</button>
+            <button class="filter-btn" data-category="design">Design</button>
+            <button class="filter-btn" data-category="business">Business</button>
+            <button class="filter-btn" data-category="marketing">Marketing</button>
+        </div>
+
+        <div id="catalog-grid" class="course-grid">
+            <!-- Injected via main.js -->
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

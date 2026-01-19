@@ -1,0 +1,5 @@
+D:\pyrevit\Extensions\Gimhan\Riyan-\Riyan-EXTENSION\LocalChatbot\Publish\LocalChatbot.exe
+D:\pyrevit\Extensions\Gimhan\Riyan-\Riyan-EXTENSION\LocalChatbot\Publish\LocalChatbot.dll
+D:\pyrevit\Extensions\Gimhan\Riyan-\Riyan-EXTENSION\LocalChatbot\Publish\LocalChatbot.deps.json
+D:\pyrevit\Extensions\Gimhan\Riyan-\Riyan-EXTENSION\LocalChatbot\Publish\LocalChatbot.runtimeconfig.json
+D:\pyrevit\Extensions\Gimhan\Riyan-\Riyan-EXTENSION\LocalChatbot\Publish\LocalChatbot.pdb

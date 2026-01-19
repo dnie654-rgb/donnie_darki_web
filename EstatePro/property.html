@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Details | EstatePro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .property-hero {
+            height: 60vh;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            padding: 6rem 0;
+        }
+
+        .detail-card {
+            background: #fff;
+            padding: 4rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .detail-card h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .property-meta {
+            display: flex;
+            gap: 3rem;
+            margin: 3rem 0;
+            padding: 2rem 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .meta-item {
+            text-align: center;
+        }
+
+        .meta-item i {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .meta-item div {
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .meta-item span {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .inquiry-sidebar {
+            background: var(--primary);
+            color: #fff;
+            padding: 3rem;
+            border-radius: 8px;
+            position: sticky;
+            top: 120px;
+            height: fit-content;
+        }
+
+        .inquiry-sidebar h3 {
+            color: #fff;
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+        }
+
+        .inquiry-form input,
+        .inquiry-form textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 4px;
+            border: none;
+            font-family: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo" onclick="location.href='index.html'" style="cursor:pointer">Estate<span>Pro</span></div>
+            <a href="listings.html" class="text-link" style="color:var(--primary); font-weight:700;">&larr; Back to
+                Listings</a>
+        </nav>
+    </header>
+
+    <div id="property-content">
+        <!-- Injected via JS -->
+    </div>
+
+    <script src="main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const id = parseInt(params.get('id')) || 1;
+            const p = PROPERTIES.find(item => item.id === id);
+
+            if (p) {
+                document.getElementById('property-content').innerHTML = `
+                    <div class="property-hero" style="background-image: url('${p.image}')">
+                        <div class="hero-overlay"></div>
+                    </div>
+                    <div class="container details-grid">
+                        <section class="detail-card reveal">
+                            <span class="subtitle">${p.type}</span>
+                            <h1>${p.title}</h1>
+                            <div class="property-location"><i data-lucide="map-pin"></i> ${p.location}</div>
+                            
+                            <div class="property-meta">
+                                <div class="meta-item"><i data-lucide="bed"></i><div>${p.beds}</div><span>Bedrooms</span></div>
+                                <div class="meta-item"><i data-lucide="bath"></i><div>${p.baths}</div><span>Bathrooms</span></div>
+                                <div class="meta-item"><i data-lucide="maximize"></i><div>${p.sqft.toLocaleString()}</div><span>Sq Ft</span></div>
+                            </div>
+                            
+                            <h3>Description</h3>
+                            <p style="margin: 2rem 0; color: var(--text-muted);">Experience unparalleled luxury in this masterfully designed ${p.type} located in the heart of ${p.location}. Boasting premium finishes, a state-of-the-art kitchen, and expansive living areas that blend indoor elegance with outdoor beauty.</p>
+                            
+                            <h3>Features</h3>
+                            <ul class="feature-list" style="color: var(--text-main);">
+                                <li><i data-lucide="check"></i> Smart Home Automated Systems</li>
+                                <li><i data-lucide="check"></i> Infinity Pool & Spa</li>
+                                <li><i data-lucide="check"></i> Professional Grade Appliances</li>
+                                <li><i data-lucide="check"></i> 24-Hour Gated Security</li>
+                            </ul>
+                        </section>
+                        
+                        <aside class="inquiry-sidebar reveal-right">
+                            <h3>Inquire About Property</h3>
+                            <div style="font-size: 2rem; font-weight: 700; color: var(--accent); margin-bottom: 2.5rem;">$${p.price.toLocaleString()}</div>
+                            <form class="inquiry-form" onsubmit="event.preventDefault(); alert('Inquiry sent! An agent will contact you shortly.')">
+                                <input type="text" placeholder="Full Name" required>
+                                <input type="email" placeholder="Email Address" required>
+                                <input type="tel" placeholder="Phone Number">
+                                <textarea rows="5" placeholder="I'm interested in ${p.title}..."></textarea>
+                                <button type="submit" class="btn btn-primary" style="width:100%; background:var(--accent);">Send Message</button>
+                            </form>
+                        </aside>
+                    </div>
+                `;
+                lucide.createIcons();
+                setupAnimations();
+            }
+        });
+    </script>
+</body>
+
+</html>

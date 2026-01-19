@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Listings | EstatePro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Estate<span>Pro</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="listings.html" class="active">Listings</a></li>
+                <li><a href="agents.html">Agents</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container listing-layout">
+        <aside class="filter-sidebar">
+            <h2 style="margin-bottom: 2rem;">Filters</h2>
+
+            <div class="filter-group">
+                <h3>Price Range</h3>
+                <input type="range" id="price-range" min="1000000" max="15000000" step="500000" value="15000000">
+                <div
+                    style="display:flex; justify-content:space-between; margin-top:0.5rem; font-size:0.8rem; font-weight:600;">
+                    <span>$1M</span>
+                    <span id="range-value">$15,000,000</span>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <h3>Property Type</h3>
+                <label><input type="checkbox" value="Villa"> Villa</label>
+                <label><input type="checkbox" value="Penthouse"> Penthouse</label>
+                <label><input type="checkbox" value="Modern Mansion"> Modern Mansion</label>
+            </div>
+
+            <div class="filter-group">
+                <h3>Rooms</h3>
+                <select style="width:100%; padding:0.8rem; border:1px solid #ddd; background:#fff;">
+                    <option>Any Bedrooms</option>
+                    <option>3+ Bedrooms</option>
+                    <option>5+ Bedrooms</option>
+                </select>
+            </div>
+
+            <button class="btn btn-primary" style="width:100%; margin-top:2rem;" onclick="location.reload()">Reset
+                Filters</button>
+        </aside>
+
+        <section>
+            <div class="section-header">
+                <div>
+                    <h2 style="font-size:2rem;">All Properties</h2>
+                    <p style="color:var(--text-muted);">Explore our curated international collection</p>
+                </div>
+            </div>
+            <div class="listings-grid" id="listings-grid">
+                <!-- Injected via main.js -->
+            </div>
+        </section>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

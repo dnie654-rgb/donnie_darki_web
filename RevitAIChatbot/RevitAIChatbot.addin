@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>Revit AI Assistant</Name>
+    <Assembly>D:\pyrevit\Extensions\Gimhan\Riyan-\Riyan-EXTENSION\RevitAIChatbot\bin\x64\Debug\net8.0-windows\RevitAIChatbot.dll</Assembly>
+    <FullClassName>RevitAIChatbot.App</FullClassName>
+    <ClientId>c5425265-2b0e-4f5d-9b16-83602937536d</ClientId>
+    <VendorId>com.riyan</VendorId>
+    <VendorDescription>Riyan AI Extensions</VendorDescription>
+  </AddIn>
+</RevitAddIns>

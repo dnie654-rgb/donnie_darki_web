@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Gourmet Haven</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        header:not(.scrolled) {
+            background: #1a0505;
+            position: fixed;
+        }
+
+        .menu-hero {
+            padding: 12rem 0 6rem;
+            background: #1a0505;
+            color: white;
+            text-align: center;
+        }
+
+        .menu-hero h1 {
+            color: white;
+            font-size: 4rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Gourmet<span>Haven</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html" class="active">Menu</a></li>
+                <li><a href="reservation.html">Reservations</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="menu-hero">
+        <div class="container">
+            <span class="subtitle">Seasonal Selections</span>
+            <h1>Our Culinary Menu</h1>
+        </div>
+    </section>
+
+    <main class="section-padding">
+        <div class="container">
+            <div class="menu-categories">
+                <button class="cat-btn active" data-category="all">All</button>
+                <button class="cat-btn" data-category="starters">Starters</button>
+                <button class="cat-btn" data-category="mains">Mains</button>
+                <button class="cat-btn" data-category="desserts">Desserts</button>
+            </div>
+
+            <div class="menu-grid">
+                <!-- Starters -->
+                <div class="menu-item reveal" data-category="starters">
+                    <div class="item-info">
+                        <h4>Truffle Arancini</h4>
+                        <p>Crispy rice balls with wild mushrooms and black truffle aioli.</p>
+                    </div>
+                    <div class="item-price">$18</div>
+                </div>
+                <div class="menu-item reveal" data-category="starters">
+                    <div class="item-info">
+                        <h4>Seared Scallops</h4>
+                        <p>Pan-seared scallops with pea puree and crispy pancetta.</p>
+                    </div>
+                    <div class="item-price">$24</div>
+                </div>
+
+                <!-- Mains -->
+                <div class="menu-item reveal" data-category="mains">
+                    <div class="item-info">
+                        <h4>Roasted Wagyu Beef</h4>
+                        <p>Tender wagyu served with truffle-infused mashed potatoes.</p>
+                    </div>
+                    <div class="item-price">$65</div>
+                </div>
+                <div class="menu-item reveal" data-category="mains">
+                    <div class="item-info">
+                        <h4>Mediterranean Lobster</h4>
+                        <p>Lobster tossed in a spicy garlic and lemon butter sauce.</p>
+                    </div>
+                    <div class="item-price">$58</div>
+                </div>
+                <div class="menu-item reveal" data-category="mains">
+                    <div class="item-info">
+                        <h4>Herb-Crusted Lamb</h4>
+                        <p>Roasted lamb rack with rosemary Jus and root vegetables.</p>
+                    </div>
+                    <div class="item-price">$48</div>
+                </div>
+
+                <!-- Desserts -->
+                <div class="menu-item reveal" data-category="desserts">
+                    <div class="item-info">
+                        <h4>Venetian Tiramisu</h4>
+                        <p>Layered organic espresso and velvet mascarpone.</p>
+                    </div>
+                    <div class="item-price">$16</div>
+                </div>
+                <div class="menu-item reveal" data-category="desserts">
+                    <div class="item-info">
+                        <h4>Lavender Panna Cotta</h4>
+                        <p>Silk-smooth cream infused with lavender and honey berry compote.</p>
+                    </div>
+                    <div class="item-price">$14</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Gourmet Haven. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURUM | Premium Retail</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <div class="header-left">
+                <button class="menu-toggle"><i data-lucide="menu"></i></button>
+                <a href="index.html" class="logo">AURUM</a>
+            </div>
+            <div class="nav-links">
+                <a href="shop.html">Shop All</a>
+                <a href="shop.html?cat=new">New Arrivals</a>
+                <a href="shop.html?cat=accessories">Accessories</a>
+            </div>
+            <div class="header-right">
+                <div class="search-bar">
+                    <i data-lucide="search"></i>
+                    <input type="text" placeholder="Search products...">
+                </div>
+                <div class="header-icons">
+                    <a href="account.html"><i data-lucide="user"></i></a>
+                    <a href="cart.html" class="cart-icon">
+                        <i data-lucide="shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Hero -->
+        <section class="home-hero">
+            <div class="hero-image-container">
+                <img src="assets/hero.png" alt="Aurum Luxury Collection" class="hero-bg">
+                <div class="hero-overlay"></div>
+            </div>
+            <div class="container hero-content">
+                <div class="hero-text-box">
+                    <span class="reveal">Limited Collection</span>
+                    <h1 class="reveal delay-1">The Essence of <i>Minimalism</i></h1>
+                    <p class="reveal delay-2">Discover our curated selection of premium essentials designed for the
+                        modern lifestyle.</p>
+                    <a href="shop.html" class="btn btn-primary reveal delay-3">Shop the Collection</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Categories -->
+        <section class="categories container section-padding">
+            <div class="section-header">
+                <h2>Curated Collections</h2>
+            </div>
+            <div class="category-grid">
+                <a href="shop.html?cat=watches" class="cat-card">
+                    <div class="cat-img"><img src="assets/products/watch.png" alt="Watches"></div>
+                    <h3>Timepieces</h3>
+                </a>
+                <a href="shop.html?cat=lifestyle" class="cat-card">
+                    <div class="cat-img"><img
+                            src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?q=80&w=1469&auto=format&fit=crop"
+                            alt="Lifestyle"></div>
+                    <h3>Lifestyle</h3>
+                </a>
+                <a href="shop.html?cat=decor" class="cat-card">
+                    <div class="cat-img"><img
+                            src="https://images.unsplash.com/photo-1534073828943-f801091bb18c?q=80&w=1374&auto=format&fit=crop"
+                            alt="Home Decor"></div>
+                    <h3>Home Decor</h3>
+                </a>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="featured-products container section-padding">
+            <div class="section-header">
+                <h2>New Arrivals</h2>
+                <a href="shop.html" class="text-link">View All</a>
+            </div>
+            <div class="products-grid" id="featured-grid">
+                <!-- Products will be injected by main.js -->
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter section-padding">
+            <div class="container newsletter-box">
+                <h2>Join the Inner Circle</h2>
+                <p>Subscribe to receive early access to new collections and exclusive offers.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Email Address" required>
+                    <button type="submit" class="btn btn-dark">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="logo">AURUM</div>
+                <p>Refining the everyday through conscious design and premium craftsmanship.</p>
+            </div>
+            <div class="footer-nav">
+                <h4>Shop</h4>
+                <a href="shop.html">All Products</a>
+                <a href="shop.html?cat=new">New Arrivals</a>
+                <a href="#">Best Sellers</a>
+            </div>
+            <div class="footer-nav">
+                <h4>Support</h4>
+                <a href="#">Shipping & Returns</a>
+                <a href="#">Sustainability</a>
+                <a href="#">Contact Us</a>
+            </div>
+            <div class="footer-social">
+                <h4>Follow</h4>
+                <div class="social-links">
+                    <a href="#"><i data-lucide="instagram"></i></a>
+                    <a href="#"><i data-lucide="twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>&copy; 2026 AURUM Retail. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

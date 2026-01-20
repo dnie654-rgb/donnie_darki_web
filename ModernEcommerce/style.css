@@ -1,0 +1,658 @@
+:root {
+    --primary: #111111;
+    --secondary: #D4AF37;
+    --bg-light: #F9F9F9;
+    --gray-light: #EEEEEE;
+    --gray-mid: #999999;
+    --white: #FFFFFF;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+    --container-max: 1400px;
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--primary);
+    background-color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 4rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.section-padding {
+    padding: 8rem 0;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 1.2rem 2.5rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+.btn-dark {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+}
+
+.nav-links a:hover {
+    color: var(--secondary);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 0.4rem 0;
+}
+
+.search-bar input {
+    border: none;
+    background: none;
+    outline: none;
+    padding-left: 0.5rem;
+    font-size: 0.9rem;
+    width: 150px;
+}
+
+.header-icons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.cart-icon {
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: var(--secondary);
+    color: var(--primary);
+    font-size: 0.7rem;
+    font-weight: 700;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Home Hero */
+.home-hero {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.hero-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.hero-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.1);
+    animation: zoomOut 20s linear infinite alternate;
+}
+
+@keyframes zoomOut {
+    from {
+        transform: scale(1.15);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 60%);
+}
+
+.hero-content {
+    z-index: 1;
+}
+
+.hero-text-box {
+    max-width: 600px;
+}
+
+.hero-text-box span {
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    font-size: 0.8rem;
+    display: block;
+    margin-bottom: 1rem;
+    color: var(--gray-mid);
+}
+
+.hero-text-box h1 {
+    font-size: 5rem;
+    line-height: 1;
+    margin-bottom: 2rem;
+}
+
+.hero-text-box h1 i {
+    font-weight: 400;
+    color: var(--secondary);
+}
+
+.hero-text-box p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 3rem;
+}
+
+/* Category Grid */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.cat-card {
+    text-align: center;
+    overflow: hidden;
+}
+
+.cat-img {
+    height: 450px;
+    overflow: hidden;
+    background-color: var(--bg-light);
+    margin-bottom: 1.5rem;
+}
+
+.cat-img img,
+.placeholder-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.cat-card:hover .cat-img img {
+    transform: scale(1.05);
+}
+
+.cat-card h3 {
+    font-size: 1.5rem;
+}
+
+/* Products Grid */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 3rem;
+}
+
+.text-link {
+    border-bottom: 1px solid var(--primary);
+    padding-bottom: 0.2rem;
+    font-size: 0.9rem;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+.product-card {
+    position: relative;
+    cursor: pointer;
+}
+
+.product-img {
+    height: 400px;
+    background-color: var(--bg-light);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.product-card:hover .product-img img {
+    transform: scale(1.05);
+}
+
+.product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.product-name {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-price {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.product-category {
+    font-size: 0.8rem;
+    color: var(--gray-mid);
+    text-transform: uppercase;
+}
+
+.add-to-cart-btn {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    background-color: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
+    transition: var(--transition);
+}
+
+.product-card:hover .add-to-cart-btn {
+    bottom: 0;
+}
+
+/* Newsletter */
+.newsletter {
+    background-color: var(--bg-light);
+    text-align: center;
+}
+
+.newsletter-box {
+    max-width: 800px !important;
+}
+
+.newsletter h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.newsletter p {
+    margin-bottom: 3rem;
+    color: #666;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 1rem;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 1.2rem;
+    border: 1px solid #ddd;
+    outline: none;
+}
+
+/* Footer */
+footer {
+    background-color: var(--white);
+    padding-top: 8rem;
+    border-top: 1px solid var(--gray-light);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 4rem;
+    padding-bottom: 6rem;
+}
+
+.footer-brand .logo {
+    margin-bottom: 1.5rem;
+}
+
+.footer-brand p {
+    color: #666;
+    max-width: 300px;
+}
+
+.footer-nav h4,
+.footer-social h4 {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+    margin-bottom: 2rem;
+    font-family: var(--font-body);
+    font-weight: 700;
+}
+
+.footer-nav a {
+    display: block;
+    margin-bottom: 1rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.footer-nav a:hover {
+    color: var(--secondary);
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--gray-light);
+    padding: 2.5rem 0;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--gray-mid);
+}
+
+/* Shop Page Specific */
+.shop-container {
+    display: flex;
+    gap: 4rem;
+    padding-top: 12rem;
+}
+
+.filter-sidebar {
+    width: 250px;
+    flex-shrink: 0;
+}
+
+.filter-group {
+    margin-bottom: 3rem;
+}
+
+.filter-group h3 {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.filter-list label {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.filter-list input {
+    margin-right: 0.8rem;
+}
+
+/* reveal animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-1 {
+    transition-delay: 0.2s;
+}
+
+.delay-2 {
+    transition-delay: 0.4s;
+}
+
+.delay-3 {
+    transition-delay: 0.6s;
+}
+
+/* Mobile Menu */
+@media (max-width: 1024px) {
+
+    .nav-links,
+    .search-bar .nav-links {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero-text-box h1 {
+        font-size: 3.5rem;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+}@ m e d i a   ( m a x - w i d t h :   1 0 2 4 p x )   {  
+  
+         . n a v - l i n k s ,  
+         . s e a r c h - b a r . n a v - l i n k s   {  
+                 d i s p l a y :   n o n e ;  
+         }  
+  
+         . m e n u - t o g g l e   {  
+                 d i s p l a y :   b l o c k ;  
+         }  
+  
+         . f o o t e r - g r i d   {  
+                 g r i d - t e m p l a t e - c o l u m n s :   1 f r   1 f r ;  
+         }  
+  
+         . h e r o - t e x t - b o x   h 1   {  
+                 f o n t - s i z e :   3 . 5 r e m ;  
+         }  
+  
+         . c a t e g o r y - g r i d   {  
+                 g r i d - t e m p l a t e - c o l u m n s :   1 f r ;  
+         }  
+ }  
+  
+ @ m e d i a   ( m a x - w i d t h :   7 6 8 p x )   {  
+         . c o n t a i n e r   {  
+                 p a d d i n g :   0   1 . 5 r e m ;  
+         }  
+  
+         h e a d e r   n a v   {  
+                 h e i g h t :   a u t o ;  
+                 p a d d i n g :   1 r e m   0 ;  
+                 f l e x - w r a p :   w r a p ;  
+                 g a p :   1 r e m ;  
+         }  
+  
+         . h e a d e r - l e f t ,  
+         . h e a d e r - r i g h t   {  
+                 g a p :   1 r e m ;  
+         }  
+  
+         . s e a r c h - b a r   i n p u t   {  
+                 w i d t h :   1 2 0 p x ;  
+         }  
+  
+         . h e r o - t e x t - b o x   h 1   {  
+                 f o n t - s i z e :   2 . 8 r e m ;  
+         }  
+  
+         . h e r o - t e x t - b o x   p   {  
+                 f o n t - s i z e :   1 r e m ;  
+         }  
+  
+         . p r o d u c t s - g r i d   {  
+                 g r i d - t e m p l a t e - c o l u m n s :   1 f r   1 f r ;  
+                 g a p :   1 r e m ;  
+         }  
+  
+         . p r o d u c t - i m g   {  
+                 h e i g h t :   2 0 0 p x ;  
+         }  
+  
+         . p r o d u c t - c a r d : h o v e r   . a d d - t o - c a r t - b t n   {  
+                 b o t t o m :   - 5 0 p x ;  
+         }  
+  
+         / *   D i s a b l e   h o v e r   e f f e c t   o n   m o b i l e   * /  
+         . a d d - t o - c a r t - b t n   {  
+                 p o s i t i o n :   s t a t i c ;  
+                 m a r g i n - t o p :   1 r e m ;  
+                 p a d d i n g :   0 . 8 r e m ;  
+         }  
+  
+         . s h o p - c o n t a i n e r   {  
+                 f l e x - d i r e c t i o n :   c o l u m n ;  
+                 p a d d i n g - t o p :   8 r e m ;  
+         }  
+  
+         . f i l t e r - s i d e b a r   {  
+                 w i d t h :   1 0 0 % ;  
+                 b o r d e r - b o t t o m :   1 p x   s o l i d   # e e e ;  
+                 p a d d i n g - b o t t o m :   2 r e m ;  
+                 m a r g i n - b o t t o m :   2 r e m ;  
+         }  
+  
+         . f o o t e r - g r i d   {  
+                 g r i d - t e m p l a t e - c o l u m n s :   1 f r ;  
+                 g a p :   3 r e m ;  
+                 t e x t - a l i g n :   c e n t e r ;  
+         }  
+  
+         . s o c i a l - l i n k s   {  
+                 j u s t i f y - c o n t e n t :   c e n t e r ;  
+         }  
+ }  
+ 

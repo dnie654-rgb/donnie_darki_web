@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | AURUM</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .cart-page {
+            padding-top: 12rem;
+            margin-bottom: 8rem;
+        }
+
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 4rem;
+        }
+
+        .cart-table th {
+            text-align: left;
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.1rem;
+        }
+
+        .cart-table td {
+            padding: 2rem 1rem;
+            border-bottom: 1px solid #eee;
+            vertical-align: middle;
+        }
+
+        .cart-item-info {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .cart-item-img {
+            width: 100px;
+            height: 100px;
+            background: #f9f9f9;
+        }
+
+        .cart-item-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ddd;
+            width: fit-content;
+        }
+
+        .quantity-control button {
+            background: none;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+
+        .quantity-control span {
+            padding: 0 1rem;
+        }
+
+        .cart-summary {
+            max-width: 400px;
+            margin-left: auto;
+            background: #f9f9f9;
+            padding: 3rem;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .total {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            border-top: 1px solid #ddd;
+            padding-top: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <div class="header-left">
+                <a href="index.html" class="logo">AURUM</a>
+            </div>
+            <div class="header-right">
+                <a href="shop.html" class="text-link">Continue Shopping</a>
+                <div class="header-icons">
+                    <a href="cart.html" class="cart-icon">
+                        <i data-lucide="shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container cart-page">
+        <h1 style="font-size: 3rem; margin-bottom: 4rem;">Shopping Bag</h1>
+
+        <div id="cart-content">
+            <table class="cart-table" id="cart-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items-body">
+                    <!-- Items injected by JS -->
+                </tbody>
+            </table>
+
+            <div class="cart-summary">
+                <div class="summary-row"><span>Subtotal</span><span id="subtotal">$0.00</span></div>
+                <div class="summary-row"><span>Shipping</span><span>Free</span></div>
+                <div class="summary-row total"><span>Total</span><span id="total">$0.00</span></div>
+                <button class="btn btn-primary checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+            </div>
+        </div>
+
+        <div id="empty-cart" style="display:none; text-align:center; padding: 5rem 0;">
+            <p style="font-size: 1.5rem; margin-bottom: 2rem;">Your bag is currently empty.</p>
+            <a href="shop.html" class="btn btn-primary">Start Shopping</a>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+    <script>
+        function renderCart() {
+            const body = document.getElementById('cart-items-body');
+            const subtotalEl = document.getElementById('subtotal');
+            const totalEl = document.getElementById('total');
+
+            if (cart.length === 0) {
+                document.getElementById('cart-content').style.display = 'none';
+                document.getElementById('empty-cart').style.display = 'block';
+                return;
+            }
+
+            let subtotal = 0;
+            body.innerHTML = cart.map((item, index) => {
+                const itemTotal = item.price * item.quantity;
+                subtotal += itemTotal;
+                return `
+                    <tr>
+                        <td>
+                            <div class="cart-item-info">
+                                <div class="cart-item-img"><img src="${item.image}"></div>
+                                <div>
+                                    <div class="product-name" style="margin:0">${item.name}</div>
+                                    <div class="product-category">${item.category}</div>
+                                    <button onclick="removeItem(${index})" style="background:none; border:none; color:red; cursor:pointer; font-size:0.8rem; margin-top:1rem">Remove</button>
+                                </div>
+                            </div>
+                        </td>
+                        <td>$${item.price.toFixed(2)}</td>
+                        <td>
+                            <div class="quantity-control">
+                                <button onclick="updateQty(${index}, -1)">-</button>
+                                <span>${item.quantity}</span>
+                                <button onclick="updateQty(${index}, 1)">+</button>
+                            </div>
+                        </td>
+                        <td>$${itemTotal.toFixed(2)}</td>
+                    </tr>
+                `;
+            }).join('');
+
+            subtotalEl.textContent = `$${subtotal.toFixed(2)}`;
+            totalEl.textContent = `$${subtotal.toFixed(2)}`;
+        }
+
+        function updateQty(index, delta) {
+            cart[index].quantity += delta;
+            if (cart[index].quantity < 1) cart[index].quantity = 1;
+            saveCart();
+            renderCart();
+            updateCartUI();
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            saveCart();
+            renderCart();
+            updateCartUI();
+        }
+
+        function checkout() {
+            alert('Checkout process would start here. Thank you for shopping with AURUM!');
+            cart = [];
+            saveCart();
+            location.href = 'index.html';
+        }
+
+        document.addEventListener('DOMContentLoaded', renderCart);
+    </script>
+</body>
+
+</html>

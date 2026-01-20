@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Gourmet Haven</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        header:not(.scrolled) {
+            background: #1a0505;
+            position: fixed;
+        }
+
+        .con-hero {
+            padding: 12rem 0 6rem;
+            background: #1a0505;
+            color: white;
+            text-align: center;
+        }
+
+        .con-hero h1 {
+            color: white;
+            font-size: 4rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Gourmet<span>Haven</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="reservation.html">Reservations</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="con-hero">
+        <div class="container">
+            <span class="subtitle">Get In Touch</span>
+            <h1>Locate Us</h1>
+        </div>
+    </section>
+
+    <main class="section-padding container">
+        <div class="contact-grid">
+            <div class="contact-info-box reveal-left">
+                <h3>Our Location</h3>
+                <div class="info-item">
+                    <i data-lucide="map-pin"></i>
+                    <div>
+                        <strong>Address</strong>
+                        <p>123 Culinary Way, San Francisco, CA 94107</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i data-lucide="phone"></i>
+                    <div>
+                        <strong>Reservations</strong>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i data-lucide="mail"></i>
+                    <div>
+                        <strong>Email</strong>
+                        <p>hello@gourmethaven.com</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i data-lucide="clock"></i>
+                    <div>
+                        <strong>Opening Hours</strong>
+                        <p>Mon - Thu: 5:00 PM - 10:00 PM</p>
+                        <p>Fri - Sun: 12:00 PM - 11:00 PM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="map-container reveal-right">
+                <div class="map-placeholder">
+                    <div style="background: rgba(0,0,0,0.4); color: white; padding: 2rem; border-radius: 4px;">
+                        Interactive Map Interface
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Gourmet Haven. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

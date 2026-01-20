@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EstatePro | Premium Real Estate</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Estate<span>Pro</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="listings.html">Listings</a></li>
+                <li><a href="agents.html">Agents</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="header-actions">
+                <a href="#" class="btn btn-sm btn-outline">List Property</a>
+            </div>
+            <button class="mobile-toggle"><i data-lucide="menu"></i></button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1 class="reveal">Find Your Next <i>Masterpiece</i></h1>
+                <p class="reveal delay-1">Premium properties in the world's most exclusive neighborhoods.</p>
+                <div class="search-box reveal delay-2">
+                    <form action="listings.html" class="hero-search-form">
+                        <div class="input-group">
+                            <i data-lucide="map-pin"></i>
+                            <input type="text" placeholder="Location, City, Zip...">
+                        </div>
+                        <div class="input-group">
+                            <i data-lucide="home"></i>
+                            <select>
+                                <option>Property Type</option>
+                                <option>Villa</option>
+                                <option>Penthouse</option>
+                                <option>Modern Mansion</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Search Now</button>
+                    </form>
+                </div>
+            </div>
+            <div class="hero-overlay"></div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats container">
+            <div class="stats-grid">
+                <div class="stat-item reveal">
+                    <h3>1.2k+</h3>
+                    <p>Premium Listings</p>
+                </div>
+                <div class="stat-item reveal delay-1">
+                    <h3>$4.5B</h3>
+                    <p>Property Sold</p>
+                </div>
+                <div class="stat-item reveal delay-2">
+                    <h3>450+</h3>
+                    <p>Global Agents</p>
+                </div>
+                <div class="stat-item reveal delay-3">
+                    <h3>24/7</h3>
+                    <p>White-Glove Support</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Properties -->
+        <section class="featured-listings container section-padding">
+            <div class="section-header">
+                <div>
+                    <span class="subtitle">Our Selection</span>
+                    <h2>Featured Properties</h2>
+                </div>
+                <a href="listings.html" class="btn btn-outline">View All Listings</a>
+            </div>
+            <div class="listings-grid" id="featured-grid">
+                <!-- Injected via main.js -->
+            </div>
+        </section>
+
+        <!-- Agent Section -->
+        <section class="agent-highlight bg-dark">
+            <div class="container about-row">
+                <div class="about-text reveal-left">
+                    <span class="subtitle">Excellence in Service</span>
+                    <h2>Work with the World's Best <i>Agents</i></h2>
+                    <p>Our agents are more than just negotiators; they are consultants with deep market insights and a
+                        passion for luxury lifestyle.</p>
+                    <ul class="feature-list">
+                        <li><i data-lucide="check-circle"></i> Private Consultations</li>
+                        <li><i data-lucide="check-circle"></i> Off-Market Opportunities</li>
+                        <li><i data-lucide="check-circle"></i> Concierge Onboarding</li>
+                    </ul>
+                    <a href="agents.html" class="btn btn-primary">Meet Our Agents</a>
+                </div>
+                <div class="about-image reveal-right">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1287&auto=format&fit=crop"
+                        alt="Real Estate Professional">
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta section-padding container text-center">
+            <div class="cta-box">
+                <h2>Selling your property?</h2>
+                <p>Let our specialists help you achieve the maximum value for your home with our exclusive marketing
+                    strategy.</p>
+                <a href="contact.html" class="btn btn-primary btn-lg">Contact an Expert</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="logo">Estate<span>Pro</span></div>
+                <p>Establishing a new standard of excellence in the luxury property market.</p>
+            </div>
+            <div class="footer-nav">
+                <h4>Platform</h4>
+                <a href="listings.html">All Listings</a>
+                <a href="#">Sell Property</a>
+                <a href="agents.html">Our Agents</a>
+            </div>
+            <div class="footer-nav">
+                <h4>Support</h4>
+                <a href="contact.html">Contact Us</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i data-lucide="instagram"></i></a>
+                    <a href="#"><i data-lucide="linkedin"></i></a>
+                    <a href="#"><i data-lucide="facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>&copy; 2026 EstatePro. High-End Real Estate Solutions.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

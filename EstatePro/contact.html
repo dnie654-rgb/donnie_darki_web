@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | EstatePro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            padding: 6rem 0;
+        }
+
+        .contact-info-section h1 {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-methods {
+            margin: 4rem 0;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-item i {
+            color: var(--accent);
+            width: 24px;
+        }
+
+        .contact-item h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .contact-form-card {
+            background: var(--bg-light);
+            padding: 4rem;
+            border-radius: 8px;
+        }
+
+        .contact-form-card h2 {
+            margin-bottom: 1rem;
+        }
+
+        .contact-form-card p {
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1.2rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .map-placeholder {
+            height: 450px;
+            background: #eee;
+            border-radius: 8px;
+            margin-top: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-style: italic;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .map-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+        }
+
+        .map-overlay {
+            position: absolute;
+            background: var(--primary);
+            color: #fff;
+            padding: 2rem;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo" onclick="location.href='index.html'" style="cursor:pointer">Estate<span>Pro</span></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="listings.html">Listings</a></li>
+                <li><a href="agents.html">Agents</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="contact-grid">
+            <div class="contact-info-section reveal-left">
+                <span class="subtitle">Get in Touch</span>
+                <h1>Let's Find Your Dream <i>Property</i></h1>
+                <p>Have questions about a listing or want to discuss selling your home? Our team of specialists is ready
+                    to provide the white-glove service you deserve.</p>
+
+                <div class="contact-methods">
+                    <div class="contact-item">
+                        <i data-lucide="map-pin"></i>
+                        <div>
+                            <h4>Global Headquarters</h4>
+                            <p>750 Fifth Avenue, Suite 1200<br>New York, NY 10019</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i data-lucide="phone"></i>
+                        <div>
+                            <h4>Direct Concierge</h4>
+                            <p>+1 (212) 555-0198<br>Available 24/7 for VIP clients</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i data-lucide="mail"></i>
+                        <div>
+                            <h4>Email Inquiries</h4>
+                            <p>concierge@estatepro.com<br>Response within 2 hours</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-icons">
+                    <a href="#"><i data-lucide="instagram"></i></a>
+                    <a href="#"><i data-lucide="linkedin"></i></a>
+                    <a href="#"><i data-lucide="facebook"></i></a>
+                    <a href="#"><i data-lucide="twitter"></i></a>
+                </div>
+            </div>
+
+            <div class="contact-form-card reveal-right">
+                <h2>Send a Message</h2>
+                <p>Complete the form below and one of our regional directors will contact you shortly.</p>
+
+                <form
+                    onsubmit="event.preventDefault(); alert('Your message has been sent successfully. A consultant will reach out to you within 24 hours.')">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <input type="text" placeholder="Jane" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <input type="text" placeholder="Doe" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="jane.doe@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Interest Area</label>
+                        <select>
+                            <option>Buying a Property</option>
+                            <option>Selling a Property</option>
+                            <option>Investment Opportunities</option>
+                            <option>Property Management</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Your Message</label>
+                        <textarea rows="6" placeholder="Tell us more about what you're looking for..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Inquiry</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="section-padding reveal">
+            <h2 class="text-center" style="margin-bottom: 3rem;">Our Office <i>Location</i></h2>
+            <div class="map-placeholder">
+                <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=1471&auto=format&fit=crop"
+                    alt="Map View">
+                <div class="map-overlay">
+                    <p><strong>EstatePro HQ</strong><br>Elite Tower, 12th Floor<br>Midtown Manhattan</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 EstatePro. High-End Real Estate Solutions.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            setupAnimations();
+        });
+    </script>
+</body>
+
+</html>

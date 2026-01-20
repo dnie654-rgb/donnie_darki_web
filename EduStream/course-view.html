@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classroom | EduStream</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body style="overflow: hidden;">
+    <header style="height: 60px;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <nav style="display: flex; align-items: center; gap: 2rem;">
+                <a href="dashboard.html" style="color: var(--text-muted);"><i data-lucide="arrow-left"
+                        style="width: 20px;"></i></a>
+                <h3 id="course-title-header" style="font-size: 1rem;">Course Title</h3>
+            </nav>
+            <div style="display: flex; align-items: center; gap: 1.5rem;">
+                <div style="font-size: 0.8rem; font-weight: 600;">Progress: 65%</div>
+                <button class="btn btn-primary btn-sm">Mark as Complete</button>
+            </div>
+        </div>
+    </header>
+
+    <main id="learning-container" class="learning-layout">
+        <section class="content-area">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div
+                    style="width: 100%; aspect-ratio: 16/9; background: #000; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; color: white;">
+                    <i data-lucide="play" style="width: 60px; height: 60px;"></i>
+                </div>
+
+                <div style="margin-top: 2rem;">
+                    <h1 id="current-lesson-title">Welcome to the Course</h1>
+                    <div style="margin-top: 1.5rem; color: var(--text-muted);">
+                        <p>In this lesson, we'll cover the fundamental concepts and prepare your environment for the
+                            upcoming modules. Make sure you have all the required tools installed as per the
+                            prerequisites list mentioned in the introductory module.</p>
+                        <br>
+                        <h3>Resources</h3>
+                        <ul style="margin-top: 1rem;">
+                            <li><a href="#" style="color: var(--primary);"><i data-lucide="file-text"
+                                        style="width: 16px; margin-right: 0.5rem;"></i> Lesson Notes.pdf</a></li>
+                            <li><a href="#" style="color: var(--primary);"><i data-lucide="link"
+                                        style="width: 16px; margin-right: 0.5rem;"></i> Documentation Link</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <aside id="curriculum-sidebar" class="curriculum-sidebar">
+            <!-- Injected via main.js -->
+        </aside>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

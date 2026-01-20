@@ -171,6 +171,24 @@ nav {
     text-shadow: var(--neon-glow-cyan);
 }
 
+.pulse-node {
+    animation: nodePulse 2s infinite ease-in-out;
+}
+
+@keyframes nodePulse {
+
+    0%,
+    100% {
+        r: 3;
+        opacity: 0.5;
+    }
+
+    50% {
+        r: 4;
+        opacity: 1;
+    }
+}
+
 /* Hero Section */
 .hero {
     height: 100vh;
@@ -266,17 +284,67 @@ nav {
 }
 
 @media (max-width: 768px) {
-    h1 {
-        font-size: 2.5rem;
+    .container {
+        padding: 0 1.5rem;
     }
 
     .grid-2 {
         grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    header {
+        position: relative;
+        background: var(--bg-dark);
+    }
+
+    header .container {
+        flex-direction: column;
+        gap: 1rem;
     }
 
     .nav-links {
-        display: none;
+        display: flex;
+        gap: 1rem;
+        font-size: 0.8rem;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
-    /* Mobile menu TODO */
+    h1 {
+        font-size: 2.5rem;
+        line-height: 1.1;
+    }
+
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding-top: 6rem;
+        align-items: flex-start;
+    }
+
+    .hero-content {
+        margin-left: 0;
+        text-align: center;
+        padding-bottom: 4rem;
+    }
+
+    .hero p {
+        margin: 0 auto 1.5rem;
+    }
+
+    .section {
+        padding: 4rem 0;
+    }
+
+    .card {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .btn {
+        padding: 0.8rem 2rem;
+        width: 100%;
+        justify-content: center;
+    }
 }

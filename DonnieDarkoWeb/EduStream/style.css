@@ -1,0 +1,632 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap');
+
+:root {
+    --primary: #4F46E5;
+    --primary-hover: #4338CA;
+    --secondary: #06B6D4;
+    --success: #10B981;
+    --warning: #F59E0B;
+    --error: #EF4444;
+    --bg-main: #FFFFFF;
+    --bg-alt: #F8FAFC;
+    --text-main: #1E293B;
+    --text-muted: #64748B;
+    --border: #E2E8F0;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --transition: all 0.2s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-main);
+    background-color: var(--bg-main);
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+.section-padding {
+    padding: 5rem 0;
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-family: var(--font-heading);
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background-color: white;
+    border-color: var(--border);
+    color: var(--text-main);
+}
+
+.btn-secondary:hover {
+    background-color: var(--bg-alt);
+    border-color: var(--text-muted);
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+}
+
+/* Header */
+header {
+    background: white;
+    border-bottom: 1px solid var(--border);
+    height: 70px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.nav-links a {
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary);
+}
+
+.auth-btns {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* Hero */
+.hero {
+    background-color: var(--bg-alt);
+    padding: 6rem 0;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-text p {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+}
+
+.hero-image img {
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 20px 20px 0 #E0E7FF;
+}
+
+/* Course Cards */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: flex;
+        gap: 1.5rem;
+        overflow-x: auto;
+        padding-bottom: 5px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        max-width: 200px;
+    }
+
+    .nav-links::-webkit-scrollbar {
+        display: none;
+    }
+
+    .header nav {
+        gap: 1rem;
+    }
+}
+
+.mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.course-card {
+    background: white;
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-shadow);
+}
+
+.course-thumb {
+    height: 180px;
+    background: #DDD;
+}
+
+.course-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.course-body {
+    padding: 1.5rem;
+}
+
+.course-cat {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.course-title {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    height: 2.7rem;
+}
+
+.course-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.rating {
+    color: var(--warning);
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+/* Dashboard */
+.dashboard-header {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 3rem;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.stat-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-container {
+    height: 8px;
+    background: var(--border);
+    border-radius: 4px;
+    margin: 1rem 0;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--success);
+}
+
+/* Learning View */
+.learning-layout {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    height: calc(100vh - 70px);
+}
+
+.content-area {
+    padding: 3rem;
+    overflow-y: auto;
+    background: white;
+}
+
+.curriculum-sidebar {
+    background: var(--bg-alt);
+    border-left: 1px solid var(--border);
+    overflow-y: auto;
+}
+
+.sidebar-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border);
+    background: white;
+    position: sticky;
+    top: 0;
+}
+
+.module-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.module-title {
+    padding: 1rem 1.5rem;
+    background: #F1F5F9;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lesson-item {
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.lesson-item:hover {
+    background: #E2E8F0;
+}
+
+.lesson-item.active {
+    background: #EEF2FF;
+    color: var(--primary);
+    border-left: 3px solid var(--primary);
+}
+
+.lesson-item i {
+    font-size: 1rem;
+}
+
+.lesson-item.completed i {
+    color: var(--success);
+}
+
+/* Footer */
+footer {
+    background: #0F172A;
+    color: white;
+    padding: 4rem 0 2rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.footer-text {
+    color: #94A3B8;
+    font-size: 0.875rem;
+    line-height: 1.7;
+}
+
+.footer-links h4 {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.footer-links a {
+    display: block;
+    margin-bottom: 0.75rem;
+    color: #94A3B8;
+    font-size: 0.875rem;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    border-top: 1px solid #334155;
+    padding-top: 2rem;
+    text-align: center;
+    color: #64748B;
+    font-size: 0.875rem;
+}
+
+/* Auth */
+.auth-container {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-alt);
+}
+
+.auth-card {
+    background: white;
+    padding: 3rem;
+    border-radius: 1rem;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: var(--card-shadow);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    font-family: inherit;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-image {
+        order: -1;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .learning-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .curriculum-sidebar {
+        display: none;
+    }
+
+    /* Hide on mobile by default */
+    .category-grid {
+        display: flex !important;
+        overflow-x: auto;
+        gap: 1rem;
+        padding-bottom: 1rem;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .category-item {
+        min-width: 160px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .stats-grid,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-card {
+        padding: 2rem;
+    }
+}@ m e d i a   ( m a x - w i d t h :   9 0 0 p x )   {  
+         . h e r o - g r i d   {  
+                 g r i d - t e m p l a t e - c o l u m n s :   1 f r ;  
+                 t e x t - a l i g n :   c e n t e r ;  
+         }  
+  
+         . h e r o - i m a g e   {  
+                 o r d e r :   - 1 ;  
+         }  
+  
+         . s t a t s - g r i d   {  
+                 g r i d - t e m p l a t e - c o l u m n s :   1 f r   1 f r ;  
+         }  
+  
+         . f o o t e r - g r i d   {  
+                 g r i d - t e m p l a t e - c o l u m n s :   1 f r   1 f r ;  
+         }  
+  
+         . l e a r n i n g - l a y o u t   {  
+                 g r i d - t e m p l a t e - c o l u m n s :   1 f r ;  
+         }  
+  
+         . c u r r i c u l u m - s i d e b a r   {  
+                 d i s p l a y :   n o n e ;  
+         }  
+  
+         . c a t e g o r y - g r i d   {  
+                 d i s p l a y :   f l e x   ! i m p o r t a n t ;  
+                 o v e r f l o w - x :   a u t o ;  
+                 g a p :   1 r e m ;  
+                 p a d d i n g - b o t t o m :   1 r e m ;  
+                 - w e b k i t - o v e r f l o w - s c r o l l i n g :   t o u c h ;  
+         }  
+  
+         . c a t e g o r y - i t e m   {  
+                 m i n - w i d t h :   1 6 0 p x ;  
+         }  
+ }  
+  
+ @ m e d i a   ( m a x - w i d t h :   7 6 8 p x )   {  
+         . n a v - l i n k s   {  
+                 d i s p l a y :   f l e x ;  
+                 g a p :   1 r e m ;  
+                 o v e r f l o w - x :   a u t o ;  
+                 p a d d i n g - b o t t o m :   5 p x ;  
+                 - w e b k i t - o v e r f l o w - s c r o l l i n g :   t o u c h ;  
+                 s c r o l l b a r - w i d t h :   n o n e ;  
+                 m a x - w i d t h :   1 0 0 % ;  
+                 j u s t i f y - c o n t e n t :   f l e x - s t a r t ;  
+         }  
+  
+         . n a v - l i n k s : : - w e b k i t - s c r o l l b a r   {  
+                 d i s p l a y :   n o n e ;  
+         }  
+  
+         . h e a d e r   n a v   {  
+                 g a p :   1 r e m ;  
+                 f l e x - d i r e c t i o n :   c o l u m n ;  
+                 h e i g h t :   a u t o ;  
+                 p a d d i n g :   1 r e m   0 ;  
+         }  
+  
+         h e a d e r   {  
+                 h e i g h t :   a u t o ;  
+         }  
+  
+         . l o g o   {  
+                 m a r g i n - b o t t o m :   0 . 5 r e m ;  
+         }  
+  
+         . a u t h - b t n s   {  
+                 w i d t h :   1 0 0 % ;  
+                 j u s t i f y - c o n t e n t :   c e n t e r ;  
+                 m a r g i n - t o p :   0 . 5 r e m ;  
+         }  
+  
+         . h e r o - t e x t   h 1   {  
+                 f o n t - s i z e :   2 . 5 r e m ;  
+         }  
+  
+         . s t a t s - g r i d ,  
+         . f o o t e r - g r i d   {  
+                 g r i d - t e m p l a t e - c o l u m n s :   1 f r ;  
+                 g a p :   2 r e m ;  
+         }  
+  
+         . a u t h - c a r d   {  
+                 p a d d i n g :   2 r e m   1 . 5 r e m ;  
+         }  
+  
+         . c o u r s e - g r i d   {  
+                 g r i d - t e m p l a t e - c o l u m n s :   1 f r ;  
+         }  
+ }  
+ 

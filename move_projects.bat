@@ -1,0 +1,7 @@
+move "D:\DonnieDarkoWeb\MyPortfolio" "DonnieDarkoWeb\"
+move "D:\DonnieDarkoWeb\NeuroPhene" "DonnieDarkoWeb\"
+move "D:\DonnieDarkoWeb\EduStream" "DonnieDarkoWeb\"
+move "D:\DonnieDarkoWeb\EstatePro" "DonnieDarkoWeb\"
+move "D:\DonnieDarkoWeb\GourmetHaven" "DonnieDarkoWeb\"
+move "D:\DonnieDarkoWeb\ModernEcommerce" "DonnieDarkoWeb\"
+move "D:\DonnieDarkoWeb\DigitalServicesLanding" "DonnieDarkoWeb\"
